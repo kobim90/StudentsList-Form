@@ -8,7 +8,7 @@ import {
   faVenusMars,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import "./cardStyle.css";
+import "../Styles/cardStyle.css";
 
 function StudentCard(props) {
   const iconsObj = {

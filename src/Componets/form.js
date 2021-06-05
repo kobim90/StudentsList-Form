@@ -10,7 +10,6 @@ import {
 } from "react-bootstrap";
 import { useState } from "react";
 import ErrorMessages from "./ErrorMsg";
-import "./App.css";
 import {
   faUser,
   faMailBulk,
@@ -18,7 +17,6 @@ import {
   faGraduationCap,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {addStudent} from "./DAL/api"
 
 function StudentForm(props) {
 //   const [checked, setChecked] = useState(false);
@@ -237,7 +235,7 @@ function StudentForm(props) {
           <Form.Group as={Col} sm={4} controlId="formGridGender">
             <Form.Label><strong>Gender</strong></Form.Label>
             <br></br>
-            <Form.Row className="justify-content-center">
+            <Form.Row className="justify-content-start">
               <ButtonGroup toggle id="formGridGender" defaultValue="">
                 {radios.map((radio, idx) => (
                   <ToggleButton

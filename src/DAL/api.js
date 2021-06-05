@@ -67,8 +67,8 @@ function addStudent(userName, email, address, course, gender) {
 
 function sortBy(array, sortParameter){
   return array.sort(function(a, b) {
-     if(a[sortParameter] < b[sortParameter]) { return -1; }
-     if(a[sortParameter] > b[sortParameter]) { return 1; }
+     if(a[sortParameter].toLowerCase() < b[sortParameter].toLowerCase()) { return -1; }
+     if(a[sortParameter].toLowerCase() > b[sortParameter].toLowerCase()) { return 1; }
   return 0;
   })
 }

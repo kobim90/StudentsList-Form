@@ -8,12 +8,12 @@ import {
   Form,
 } from "react-bootstrap";
 import "./App.css";
-import "./style.css";
-import "./cardStyle.css"
-import StudentForm from "./form";
+import "./Styles/style.css";
+import "./Styles/cardStyle.css"
+import StudentForm from "./Componets/form"
 import { getStudents, getStudent, sortBy, addStudent, updateStudents} from "./DAL/api";
-import StudentCard from "./studentCard";
-import { useState, useEffect } from "react";
+import StudentCard from "./Componets/studentCard";
+import { useState} from "react";
 import {
   faGraduationCap,
   faPlusCircle,
@@ -22,13 +22,6 @@ import {
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 function App() {
-  // useEffect ( () => {
-  //   getStudents()
-  //   return () => {
-
-  //   }
-  // }, [])
-
   const [students, setStudents] = useState([...getStudents()])
   const [showCard, setShowCard] = useState(false);
   const [student, setStudent] = useState({});
@@ -99,12 +92,6 @@ function App() {
             <Modal.Body>
               <StudentForm handleClose={handleClose} addStudentList={addStudentList}/>
             </Modal.Body>
-            {/* <Modal.Footer>
-            <Button variant="secondary" onClick={handleClose}>
-              Close
-            </Button>
-            <Button variant="primary">Understood</Button>
-          </Modal.Footer> */}
           </Modal>
           <Button variant="outline-dark" className="mt-3" onClick={handleShow}>
             <FontAwesomeIcon icon={faPlusCircle} size={"2x"}/>
