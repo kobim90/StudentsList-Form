@@ -1,0 +1,54 @@
+@import url("https://fonts.googleapis.com/css2?family=Pattaya&family=Raleway:wght@600&display=swap");
+:root {
+  --red: rgb(207, 29, 22);
+  --grey: rgb(248, 249, 250);
+  --black: rgb(38, 38, 38);
+  --textGrey: rgb(201, 201, 201);
+}
+/*  */
+.row,
+.col {
+  padding: 3px;
+}
+
+.header {
+  margin-top: 2%;
+  margin-bottom: 4%;
+  font-size: 70px;
+}
+
+.headerRed {
+  color: var(--red);
+  font-family: "Raleway", sans-serif;
+  font-weight:bold;
+  min-height: 100px;
+
+background: #FFFFFF;
+text-shadow: 2px 2px 0px #FFFFFF, 5px 4px 0px rgba(0,0,0,0.15);
+
+}
+
+.grey {
+  font-family: "Raleway", sans-serif;
+  background-color: white;
+  color: var(--black);
+  text-align: center;
+  overflow: hidden;
+  min-height: 600px;
+  box-shadow: 0 0 15px rgba(10, 10, 10, 0.3);
+}
+
+.studentsCol {
+  background-color: rgba(0, 0, 0, 0);
+  border-color: rgb(255, 255, 255);
+  color: var(--black);
+}
+.list-group-item.active {
+  background-color: var(--black) !important;
+  color: var(--grey);
+}
+
+.mt-3 {
+  border: none;
+  border-radius: 50%;
+}
