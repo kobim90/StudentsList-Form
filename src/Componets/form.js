@@ -17,11 +17,9 @@ import {
   faGraduationCap,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {getStudent} from "../DAL/api"
 
 function StudentForm(props) {
-//   const [checked, setChecked] = useState(false);
-//   const [radioValue, setRadioValue] = useState("1");
-
   const radios = [
     { name: "Male", value: "Male" },
     { name: "Female", value: "Female" },
@@ -78,7 +76,7 @@ function StudentForm(props) {
       validations: {
         required: true,
         pattern: /(?:^|\W)Male|Female|Other(?:$|\W)/,
-        requirments: "Gender must be selected",
+        requirments: "",
       },
     },
   });
@@ -95,6 +93,13 @@ function StudentForm(props) {
     if (!validations.pattern.test(value)) {
       showErrors.push(`${validations.requirments}`);
       background = "alert-danger";
+    }
+
+    if (name === "username") {
+      if (getStudent(value)) {
+        showErrors.push(`${value} allready exists, choose a different username`);
+        background = "alert-danger";
+      }
     }
     setStudentData((prevData) => ({
       ...prevData,
@@ -126,7 +131,7 @@ function StudentForm(props) {
     let error =0;
     for (const input in studentData) {
       validation(studentData[input].value, input)
-      if (!studentData[input].value) {
+      if (!studentData[input].value || studentData[input].errors.length > 0) {
         error++;
       }
     }
